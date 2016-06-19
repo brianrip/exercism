@@ -4,17 +4,23 @@ class Bob {
   }
 
   hey(phrase){
-    if (isUpperCase(phrase) && onlyNumbers(phrase)) {
+    if (isUpperCase(phrase) && onlyNumbers(phrase) && questionWithNum(phrase)) {
       return "Whoa, chill out!";
-    } else if (isQuestion(phrase) ) {
+    } else if (isQuestion(phrase)) {
       return "Sure.";
+    } else if (silence(phrase)) {
+      return "Fine. Be that way!";
     } else
-    return "Whatever.";
+      return "Whatever.";
   }
 
 }
   function isUpperCase(str){
     return str === str.toUpperCase();
+  }
+
+  function silence(str){
+    return str.trim().length === 0;
   }
 
   function isQuestion(str){
@@ -27,8 +33,8 @@ class Bob {
   }
 
   function questionWithNum(str){
-    // var cleanStr
-    // isNaN(phrase.replace(/[,?]+/g, "") === false)
+    var cleanStr = str.replace("?", "");
+    return isNaN(cleanStr);
   }
 
 
