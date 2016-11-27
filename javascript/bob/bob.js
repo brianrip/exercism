@@ -1,8 +1,5 @@
 class Bob {
-  constructor(){
-
-  }
-
+  
   hey(phrase){
     if (isUpperCase(phrase) && onlyNumbers(phrase) && questionWithNum(phrase)) {
       return "Whoa, chill out!";
